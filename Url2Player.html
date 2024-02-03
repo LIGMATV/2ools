@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL2Player</title>
+  <link href="style.css" rel="stylesheet"></link>
+</head>
+<body>
+
+<span class="primary">URL2Player</span>
+
+<div class="form-group">
+<form id="videoForm">
+  <label for="videoUrl">URL Video:</label>
+  <input type="text" id="videoUrl" name="videoUrl" required>
+  <button class="btn btn-primary" type="button" onclick="generateVideo()">	
+    &#9654; Play
+  </button>
+</form><br>
+
+<label for="videoSize">Video Size:</label>
+<input type="range" id="videoSize" min="100" max="800" step="10" value="640" oninput="resizeVideo()">
+</div>
+
+<div id="videoContainer"></div>
+
+<script>
+function generateVideo() {
+  var videoUrl = document.getElementById("videoUrl").value;
+  var videoContainer = document.getElementById("videoContainer");
+
+  // Menghapus video dan input range sebelumnya jika ada
+  while (videoContainer.firstChild) {
+    videoContainer.removeChild(videoContainer.firstChild);
+  }
+
+  // Membuat elemen video dan menetapkan atribut src
+  var videoElement = document.createElement("video");
+  videoElement.width = 640;
+  videoElement.height = 360;
+  videoElement.controls = true;
+
+  var sourceElement = document.createElement("source");
+  sourceElement.src = videoUrl;
+  sourceElement.type = "video/mp4";
+
+  videoElement.appendChild(sourceElement);
+  videoContainer.appendChild(videoElement);
+}
+
+function resizeVideo() {
+  var videoElement = document.querySelector("video");
+  var videoSizeInput = document.getElementById("videoSize");
+  videoElement.width = videoSizeInput.value;
+}
+
+</script>
+
+</body>
+</html>

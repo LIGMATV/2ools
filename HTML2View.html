@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Viewer</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+span {
+  font-size: 100px;
+}
+
+.primary {
+  background: -webkit-linear-gradient(#97D9E1, #ffffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;  
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #editor-container,
+        #html-container {
+            flex: 1;
+            overflow: auto;
+            padding: 5px;
+            box-sizing: border-box;
+            resize: both; /* Tambahkan properti resize di sini */
+        }
+
+        textarea {
+            width: 100%;
+            height: calc(100% - 130px);
+            resize: none;
+            overflow: auto;
+            padding: 50px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div id="editor-container">
+      <span class="primary">HTML2View</span>
+        <textarea id="htmlInput" oninput="showHTML()"></textarea>
+    </div>
+
+    <div id="html-container">
+        <iframe id="output" onload="hideLoading()"></iframe>
+    </div>
+
+    <script>
+        function showHTML() {
+            var htmlCode = document.getElementById("htmlInput").value;
+            var iframeDocument = document.getElementById("output").contentDocument;
+
+            // Membersihkan isi elemen iframe sebelum menulis HTML baru
+            iframeDocument.open();
+            iframeDocument.write('');
+            iframeDocument.close();
+
+            // Menulis HTML baru ke dalam elemen iframe
+            iframeDocument.write(htmlCode);
+        }
+
+    </script>
+
+</body>
+</html>

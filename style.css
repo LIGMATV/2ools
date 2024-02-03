@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;  
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+span {
+  font-size: 100px;
+}
+
+.primary {
+  background: -webkit-linear-gradient(#97D9E1, #ffffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col-xs-12 {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.input-area {
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+p,label {
+  display: block;
+  margin-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+button {
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-xs {
+  background-color: #cbcbcb;
+  border: 5px;
+  border-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+}
+
+.btn-default {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+}
+
+input[type="color"] {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  padding: 20px;
+}
+
+.logo-2ools {
+  cursor: text;
+  text-align: center;
+  color: #e9e9e9;
+  cursor: text;
+  padding-left: 20px;
+  text-shadow: 1px 1px 1px #07BBBC,
+  1px 2px 1px #07BBBC,
+  1px 3px 1px #07BBBC,
+  1px 4px 1px #07BBBC,
+  1px 5px 1px #07BBBC,
+  1px 6px 1px #07BBBC,
+  1px 7px 1px #07BBBC,
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
+}
+
+/** SVG2DataURI **/
+
+.svg2datauri {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.svg2datauri textarea {
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+}
+
+/** Url2Player **/
+
+#videoContainer {
+  padding-left: 20px;
+}
+
+#videoContainer video {
+border-radius: 5px;
+}
+
+/** HTML2View **/
+
+.html2view {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#editor-container,
+#html-container {
+    flex: 1;
+    overflow: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: both; /* Tambahkan properti resize di sini */
+}
+
+.htmlInput {
+    width: 50%;
+    height: 100%;
+    resize: none;
+    overflow: auto;
+    padding: 50px;
+box-sizing: border-box;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+border-radius: 10px;
+}
+
+#output {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* also check out the similar https://websemantics.uk/tools/svg-to-background-image-conversion/ which is pretty cool and supplies some context too */

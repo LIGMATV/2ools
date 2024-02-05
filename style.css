@@ -7,10 +7,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  padding-top: 20px;
 }
 
 span {
-  font-size: 100px;
+  font-size: 70px;
 }
 
 .primary {
@@ -48,19 +49,23 @@ button {
 }
 
 .btn-xs {
-  background-color: #cbcbcb;
-  border: 5px;
-  border-color: #333;
-  border-radius: 10px;
-  color: #fff;
   border: none;
+  background: #e8e8e8;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #000000;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
 }
 
 .btn-primary {
-  background-color: #007bff;
+  border: none;
+  background: #07BBBC;
+  padding: 8px 10px;
   border-radius: 10px;
   color: #fff;
-  border: none;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
 }
 
 .btn-default {
@@ -154,5 +159,27 @@ border-radius: 10px;
     height: 100%;
     border: none;
 }
+
+/** HTML2DataURI **/
+
+.html2datauri {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.html2datauri textarea {
+  width: 33%;
+  height: 150px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position:relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#resultLink {
+  width: 100%;
+}
+
 
 /* also check out the similar https://websemantics.uk/tools/svg-to-background-image-conversion/ which is pretty cool and supplies some context too */

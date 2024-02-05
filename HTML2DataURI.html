@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML2DataURI</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+</head>
+<body>
+
+  <span class="primary">HTML2DataURI</span>
+
+  <div class="html2datauri">
+      <div class="col-xs-12 col-sm-6 input-area">
+        <div class="form-group">
+          <label for="htmlInput">Enter your code here:</label>
+          <textarea id="htmlInput" placeholder="<!-- Your HTML code here -->"></textarea>
+          <textarea id="cssInput" placeholder="/* Your CSS styles here */"></textarea>
+          <textarea id="scriptInput" placeholder="// Your JavaScript code here"></textarea><br><br>
+          <button type="button" class="btn btn-primary" onclick="generateHTML()">Convert ...</button>
+        </div>
+        </div>
+
+      <div class="col-xs-12 col-sm-6 input-area">
+      <div class="form-group" id="resultContainer" style="display:none; margin-top: 10px;">
+        <p>URL yang dihasilkan:</p>
+        <textarea id="resultLink" readonly></textarea><br><br>
+        <button type="button" id="copy" class="btn btn-primary" onclick="copyToClipboard()">Share the URL</button>
+        <a class="btn-xs" id="openLink" href="" target="_blank">Open URL</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function generateHTML() {
+      var htmlInput = document.getElementById('htmlInput').value;
+      var cssInput = document.getElementById('cssInput').value;
+      var scriptInput = document.getElementById('scriptInput').value;
+
+      var encodedHTML = encodeURIComponent(htmlInput);
+      var encodedCSS = encodeURIComponent(cssInput);
+      var encodedScript = encodeURIComponent(scriptInput);
+
+      var dataURL = 'data:text/html,' + encodedHTML;
+
+      if (encodedCSS) {
+        dataURL += '%0A%3Cstyle%3E' + encodedCSS + '%3C/style%3E';
+      }
+
+      if (encodedScript) {
+        dataURL += '%0A%3Cscript%3E' + encodedScript + '%3C/script%3E';
+      }
+
+      var resultContainer = document.getElementById('resultContainer');
+      var resultLink = document.getElementById('resultLink');
+      var openLink = document.getElementById('openLink');
+
+      resultLink.value = dataURL;
+      openLink.href = dataURL;
+
+      resultContainer.style.display = 'block';
+    }
+
+    function copyToClipboard() {
+      var resultLink = document.getElementById('resultLink');
+      resultLink.select();
+      document.execCommand('copy');
+    }
+  </script>
+
+</body>
+</html>

@@ -58,22 +58,6 @@ button {
   transition: opacity .2s ease-in-out;
 }
 
-.btn-primary {
-  border: none;
-  background: #07BBBC;
-  padding: 8px 10px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  transition: opacity .2s ease-in-out;
-}
-
-.btn-default {
-  background-color: #ccc;
-  color: #333;
-  border: none;
-}
-
 input[type="color"] {
   padding: 8px;
   box-sizing: border-box;
@@ -100,6 +84,26 @@ input[type="color"] {
 1px 22px 10px rgba(16,16,16,0.2),
 1px 25px 35px rgba(16,16,16,0.2),
 1px 30px 60px rgba(16,16,16,0.4);
+}
+
+/** Buttons **/
+
+.btn-primary,
+/** IMG2DataURI **/ .copyButton {
+
+  border: none;
+  background: #07BBBC;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
+}
+
+.btn-xs:hover, .btn-primary:hover,
+/** IMG2DataURI **/ .copyButton:hover {
+
+  opacity: 0.8;
 }
 
 /** SVG2DataURI **/
@@ -180,6 +184,13 @@ border-radius: 10px;
 #resultLink {
   width: 100%;
 }
+
+/** IMG2DataURI **/
+
+.img2datauri {
+padding: 20px;
+}
+
 
 
 /* also check out the similar https://websemantics.uk/tools/svg-to-background-image-conversion/ which is pretty cool and supplies some context too */

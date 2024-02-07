@@ -130,34 +130,51 @@
     }
 
     function copyAllUrls(format) {
-      const textareas = document.querySelectorAll('.dataUriTextarea');
-      const urls = Array.from(textareas).map(textarea => {
-        if (format === 'html') {
-          return `<img src="${textarea.value}" alt="image" />`;
-        } else if (format === 'markdown') {
-          return `![image](${textarea.value})`;
-        } else {
-          return textarea.value;
-        }
-      }).join('\n\n');
-
-      const textarea = document.createElement('textarea');
-      textarea.value = urls;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-
-      // Tampilkan notifikasi Swal.fire setelah menyalin semua URL
-      Swal.fire({
-  color: "#07BBBC",
-  background: "#fff",
-  position: "top-end",
-  title: "📋 Copied",
-  showConfirmButton: false,
-  timer: 800
-});
+  const textareas = document.querySelectorAll('.dataUriTextarea');
+  const urls = Array.from(textareas).map(textarea => {
+    if (format === 'html') {
+      return `<img src="${textarea.value}" alt="image" />`;
+    } else if (format === 'markdown') {
+      return `![image](${textarea.value})`;
+    } else {
+      return textarea.value;
     }
+  }).join('\n\n');
+
+  const textarea = document.createElement('textarea');
+  textarea.value = urls;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  customAlert();
+}
+
+// Simple Alert Animation
+
+function customAlert() {
+  var alertElement = document.createElement("div");
+  alertElement.className = "alert";
+  alertElement.innerHTML = "📋 Copied!";
+
+  var styleElement = document.createElement("style");
+  styleElement.textContent = `
+      @keyframes grow { from { transform: scale(0); } to { transform: scale(1); } }
+      .alert { display: none; position: fixed; top: 20px; right: 20px; padding: 20px; background-color: #fff; color: #07BBBC; border: none; border-radius: 5px; font-size: 24px; box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px; animation: grow 0.3s ease; }
+  `;
+  document.head.appendChild(styleElement);
+  document.body.appendChild(alertElement);
+  alertElement.style.display = "block";
+  alertElement.addEventListener("animationend", function() {
+      setTimeout(closeAlert, 1000);
+  });
+}
+function closeAlert() {
+  var alertElement = document.querySelector(".alert");
+  alertElement.parentNode.removeChild(alertElement);
+}
+
   </script>
 
 </body>

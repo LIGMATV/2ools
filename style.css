@@ -191,6 +191,45 @@ border-radius: 10px;
 padding: 20px;
 }
 
+/** Text2ReadMore **/
 
+.text2readmore {
+  margin-left: 280px;
+}
+
+.text2readmore textarea {
+  width: 60%;
+  height: 150px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position:relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: text;
+}
+
+input[type=text] {
+  /** Looks like Material Design **/
+  font-family: "Lato", sans-serif;
+  width: 60%;
+  padding: 24px 16px 10px;
+  font-size: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #000000;
+  transition: 0.2s;
+  background-color: #f3f3f3;
+  border-radius: 10px 10px 0 0 ;
+}
+
+input[type=text]:focus, #iframe {
+  border-bottom: 2px solid #07BBBC;
+  outline: none;
+}
+
+input[type=text]:focus::placeholder{
+  color: #07BBBC;
+}
 
 /* also check out the similar https://websemantics.uk/tools/svg-to-background-image-conversion/ which is pretty cool and supplies some context too */

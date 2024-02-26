@@ -14,6 +14,14 @@ span {
   font-size: 70px;
 }
 
+code {
+  background: #ededed;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}
+
 .primary {
   background: -webkit-linear-gradient(#97D9E1, #ffffff00);
   -webkit-background-clip: text;
@@ -230,6 +238,21 @@ input[type=text]:focus, #iframe {
 
 input[type=text]:focus::placeholder{
   color: #07BBBC;
+}
+
+/** MediaHTML **/
+
+.media2html {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.media2html textarea {
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
 }
 
 /* also check out the similar https://websemantics.uk/tools/svg-to-background-image-conversion/ which is pretty cool and supplies some context too */

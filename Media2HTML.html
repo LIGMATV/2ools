@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG2DataURI</title>
+  <link href="style.css" rel="stylesheet"></link>
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+</head>
+<body>
+
+<span class="primary">Media2HTML</span>
+
+
+<div class="media2html">
+    <div class="col-xs-12 input-area">
+      <p>Embed your all image and video into one HTML page!</p><br>
+      <video width="60%" autoplay muted loop><source src="assets/media2datauri.mp4" type="video/mp4"></video><br>
+      <code>dir /b /s > dirlist.txt</code><br><br>
+    </div>
+    <div class="col-xs-12 col-sm-6 input-area">
+      <div class="form-group">
+        <label for="outputTextarea">Copy paste the content of <code>dirlist.txt</code></label>
+        <textarea id="fileTextarea" placeholder="image.jpeg
+video.mp4
+..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" onclick="generateContent()">Convert ...</button>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 input-area">
+      <div class="form-group">
+        <label for="outputTextarea">HTML generated here</label>
+        <textarea id="outputTextarea" readonly></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="button" id="copy" class="btn btn-primary">Copy to clipboard</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+        function generateContent() {
+            var textareaValue = document.getElementById('fileTextarea').value;
+            var lines = textareaValue.split('\n');
+            var outputContent = '';
+
+            for (var i = 0; i < lines.length; i++) {
+                var fileName = lines[i].trim();
+                if (fileName !== '') {
+                    var fileExtension = fileName.split('.').pop().toLowerCase();
+                    if (fileExtension === 'mp4') {
+                        outputContent += '<video controls width="320" height="240">';
+                        outputContent += '<source src="' + fileName + '" type="video/mp4">';
+                        outputContent += '</video>\n';
+                    } else if (['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp'].includes(fileExtension)) {
+                        outputContent += '<img src="' + fileName + '" alt="Image">\n';
+                    } else {
+                        outputContent += 'Unsupported file type: ' + fileName + '\n';
+                    }
+                }
+            }
+
+            document.getElementById('outputTextarea').value = outputContent;
+        }
+    </script>
+
+</body>
+</html>

@@ -28,6 +28,13 @@ code {
   -webkit-text-fill-color: transparent;
 }
 
+.pro {
+  background: -webkit-linear-gradient(#afa875, #ffffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .col-xs-12 {
   width: 100%;
   padding: 0 15px;
@@ -217,18 +224,12 @@ padding: 20px;
 }
 
 input[type=text] {
-  /** Looks like Material Design **/
   font-family: "Lato", sans-serif;
   width: 60%;
-  padding: 24px 16px 10px;
   font-size: 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid #000000;
   transition: 0.2s;
-  background-color: #f3f3f3;
-  border-radius: 10px 10px 0 0 ;
+  border-radius: 5px;
+  caret-color: #07BBBC;
 }
 
 input[type=text]:focus, #iframe {
@@ -242,17 +243,31 @@ input[type=text]:focus::placeholder{
 
 /** MediaHTML **/
 
-.media2html {
+.media2html, .twoo {
   width: 80%;
   margin: 0 auto;
 }
 
-.media2html textarea {
+.media2html textarea, .twoo textarea{
   width: 100%;
   padding: 50px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 10px;
+}
+
+/** redirects.yml **/
+
+#redirectsForm {
+  padding-left: 130px;
+}
+
+select {
+  font-family: "Lato", sans-serif;
+  width: 60%;
+  font-size: 20px;
+  transition: 0.2s;
+  border-radius: 5px;
 }
 
 /* also check out the similar https://websemantics.uk/tools/svg-to-background-image-conversion/ which is pretty cool and supplies some context too */
